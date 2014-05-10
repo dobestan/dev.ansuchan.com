@@ -1,0 +1,16 @@
+<h1>Edit Share Links</h1>
+
+<%= form_for @share_link do |f| %>
+  <div>
+  <%= @share_link.original_url  %>
+  </div>
+
+  <div>
+  <%= f.label :shorten_url, "Shorten Url" %><br />
+  <%= f.text_field :shorten_url %>
+  </div>
+
+  <div>
+  <%= f.submit "Shorten" %>
+  </div>
+<% end  %>
