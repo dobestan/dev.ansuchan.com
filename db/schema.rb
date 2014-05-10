@@ -11,6 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140510063641) do
+
+  create_table "share_links", force: true do |t|
+    t.string   "original_url"
+    t.string   "shorten_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "share_links", ["original_url"], name: "index_share_links_on_original_url", unique: true, using: :btree
+  add_index "share_links", ["shorten_url"], name: "index_share_links_on_shorten_url", unique: true, using: :btree
 
 end
