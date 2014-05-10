@@ -1,6 +1,7 @@
 DevAnsuchanCom::Application.routes.draw do
   root 'welcome#index'
   resources :share_links
+  get '/share/:shorten_url', to: 'share_links#redirect'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
