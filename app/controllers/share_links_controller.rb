@@ -1,7 +1,14 @@
 class ShareLinksController < ApplicationController
   include ShareLinksHelper
+  http_basic_authenticate_with name: "dobestan",\
+                              password: "dkstncks",\
+                              except: [:redirect, :intro]
+
+  def intro
+  end
 
   def index
+    @share_links = ShareLink.all
   end
 
   def show

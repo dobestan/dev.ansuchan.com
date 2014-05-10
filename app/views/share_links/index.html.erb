@@ -1,1 +1,6 @@
 <h1>Share Links</h1>
+<ul>
+<% @share_links.each do |share_link| %>
+  <li><%= share_link.original_url %> -> <%= share_link.shorten_url  %></li>
+<% end %>
+</ul>
